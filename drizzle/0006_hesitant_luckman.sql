@@ -1,0 +1,1 @@
+ALTER TABLE "userDetails" DROP COLUMN "id";

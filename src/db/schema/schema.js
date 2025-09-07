@@ -4,8 +4,7 @@ import { serial } from "drizzle-orm/pg-core";
 import { pgTable, varchar } from "drizzle-orm/pg-core";
 
 export const userDetails = pgTable("userDetails", {
-  id: serial().primaryKey(),
-  userId: uuid().notNull(),
+  userId: uuid().notNull().primaryKey(),
   firstName: varchar("firstName").notNull(),
   lastName:varchar("lastName"),
   password: varchar("password").notNull(),
@@ -18,7 +17,7 @@ export const userDetails = pgTable("userDetails", {
 });
 
 export const eventDetails = pgTable("eventDetails",{
-  eventId:uuid().notNull(),
+  eventId:uuid().notNull().primaryKey(),
   name:varchar("name").notNull(),
   startDate:date("startDate").notNull(),
   endDate:date("endDate").notNull(),
